@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0e17">
+  <meta name="description" content="Sample C programming lessons for approved Northstar learners.">
+  <title>My learning · Northstar Learning</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/app.js"></script>
+</head>
+<body data-page="dashboard">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand sidebar-brand" href="dashboard.html"><span class="brand-mark">N</span><span>northstar<span class="brand-muted"> learning</span></span></a>
+      <div class="sidebar-label">LEARNING</div>
+      <nav class="side-nav" aria-label="Main navigation"><a class="side-link is-current" href="#overview"><span class="nav-icon">⌂</span> Overview</a><a class="side-link" href="#curriculum"><span class="nav-icon">▤</span> C Programming</a><a class="side-link" href="#curriculum"><span class="nav-icon">◷</span> My progress</a></nav>
+      <div class="sidebar-bottom"><div class="sidebar-help"><span class="help-icon">?</span><div><strong>Keep going</strong><p>Every expert started somewhere.</p></div></div><p class="sidebar-version">LEARNING PORTAL <span>DEMO</span></p></div>
+    </aside>
+    <div class="app-main-wrap">
+      <header class="topbar app-topbar"><button class="icon-button menu-toggle" type="button" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button><div class="breadcrumb"><span>My learning</span><span aria-hidden="true">/</span><strong>Overview</strong></div><div class="topbar-actions"><span class="user-chip"><span class="avatar" id="user-avatar">L</span><span id="user-chip-name">Learner</span></span><button class="button button-quiet button-small" type="button" data-logout>Sign out</button></div></header>
+      <main class="dashboard-main" id="overview">
+        <section class="welcome-row"><div><p class="eyebrow">YOUR LEARNING SPACE</p><h1>Good to have you here, <span id="welcome-name">Learner</span><span class="wave" aria-hidden="true">✦</span></h1><p class="muted">Small steps add up. Pick up where you left off.</p></div><div class="date-chip"><span class="date-dot"></span> C Programming · Beginner path</div></section>
+        <section class="hero-card"><div class="hero-content"><span class="hero-kicker">YOUR FIRST PATH</span><h2>Think in code.<br><span>Build with C.</span></h2><p>Get to know the building blocks behind the programs you use every day.</p><a class="button button-light" href="#curriculum">Explore the curriculum <span aria-hidden="true">→</span></a></div><div class="code-art" aria-hidden="true"><span class="code-window-dots"><i></i><i></i><i></i></span><pre><span class="code-purple">#include</span> <span class="code-green">&lt;stdio.h&gt;</span>
+
+<span class="code-purple">int</span> main() {
+  <span class="code-blue">printf</span>(<span class="code-orange">"Hello, world!\n"</span>);
+  <span class="code-purple">return</span> <span class="code-number">0</span>;
+}</pre><span class="code-spark">✳</span></div><div class="hero-orb hero-orb-one"></div><div class="hero-orb hero-orb-two"></div></section>
+        <section class="progress-section"><div class="section-heading"><div><p class="eyebrow">YOUR JOURNEY</p><h2>Learning overview</h2></div><span class="demo-tag">SAMPLE CONTENT</span></div><div class="overview-grid"><article class="overview-card progress-card"><div class="card-topline"><span class="overview-icon icon-violet">▤</span><span class="soft-badge">Just getting started</span></div><h3>C Programming</h3><p class="muted">10 bite-sized topics to explore</p><div class="progress-track"><span style="width: 0%"></span></div><div class="progress-meta"><span>Course progress</span><strong>0%</strong></div></article><article class="overview-card next-card"><div class="card-topline"><span class="overview-icon icon-cyan">↗</span><span class="card-label">SUGGESTED NEXT</span></div><h3>Start with the basics</h3><p class="muted">Meet C and write your first line of code.</p><a class="inline-link" href="#curriculum">View introduction <span aria-hidden="true">→</span></a></article></div></section>
+        <section class="curriculum-section" id="curriculum"><div class="section-heading"><div><p class="eyebrow">THE FUNDAMENTALS</p><h2>Explore C Programming</h2><p class="muted">A sample curriculum to demonstrate protected learner access.</p></div><span class="curriculum-count">10 topics <span aria-hidden="true">·</span> Beginner</span></div><div class="course-grid" id="course-grid"></div></section>
+        <footer class="dashboard-footer"><span>© 2026 Northstar Learning</span><span>Educational content shown here is for demonstration only.</span></footer>
+      </main>
+    </div>
+  </div>
+  <div class="sidebar-scrim" id="sidebar-scrim"></div>
+  <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

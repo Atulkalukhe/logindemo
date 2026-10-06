@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0e17">
+  <meta name="description" content="A frontend demonstration of an approval-based student account system.">
+  <title>Sign in · Northstar Learning</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/app.js"></script>
+</head>
+<body data-page="auth">
+  <main class="auth-layout">
+    <section class="auth-intro" aria-labelledby="intro-title">
+      <a class="brand" href="index.html" aria-label="Northstar Learning home"><span class="brand-mark">N</span><span>northstar<span class="brand-muted"> learning</span></span></a>
+      <div class="intro-copy">
+        <p class="eyebrow"><span class="live-dot"></span> A place to keep growing</p>
+        <h1 id="intro-title">Make room for<br><span class="text-gradient">what’s next.</span></h1>
+        <p class="intro-lede">A focused space to learn, practice, and build confidence one concept at a time.</p>
+        <div class="intro-points">
+          <div class="intro-point"><span class="point-icon">01</span><span>Learn at your own pace</span></div>
+          <div class="intro-point"><span class="point-icon">02</span><span>Practice the fundamentals</span></div>
+          <div class="intro-point"><span class="point-icon">03</span><span>Track your progress</span></div>
+        </div>
+      </div>
+      <p class="intro-footnote">A simple demonstration of an approval-based learning portal.</p>
+    </section>
+
+    <section class="auth-panel" aria-label="Account access">
+      <div class="auth-card">
+        <div class="mobile-brand brand"><span class="brand-mark">N</span><span>northstar<span class="brand-muted"> learning</span></span></div>
+        <div class="auth-heading">
+          <p class="eyebrow">YOUR LEARNING SPACE</p>
+          <h2 id="auth-title">Welcome back</h2>
+          <p class="muted" id="auth-subtitle">Sign in to continue learning.</p>
+        </div>
+        <div class="auth-tabs" role="tablist" aria-label="Account action">
+          <button class="auth-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="login-panel" id="login-tab" data-auth-tab="login">Sign in</button>
+          <button class="auth-tab" type="button" role="tab" aria-selected="false" aria-controls="register-panel" id="register-tab" data-auth-tab="register">Create account</button>
+        </div>
+
+        <div id="login-panel" role="tabpanel" aria-labelledby="login-tab">
+          <form id="login-form" class="form-stack" novalidate>
+            <label class="field"><span>Email or username</span><input name="identifier" autocomplete="username" required placeholder="you@example.com" aria-describedby="login-identifier-error"><small class="field-error" id="login-identifier-error"></small></label>
+            <label class="field"><span>Password</span><span class="password-wrap"><input name="password" type="password" autocomplete="current-password" required placeholder="Enter your password" aria-describedby="login-password-error"><button class="password-toggle" type="button" data-toggle-password aria-label="Show password">Show</button></span><small class="field-error" id="login-password-error"></small></label>
+            <div class="form-message" id="login-message" role="status" aria-live="polite"></div>
+            <button class="button button-primary button-full" type="submit">Sign in <span aria-hidden="true">→</span></button>
+          </form>
+          <p class="form-switch">New to Northstar? <button type="button" class="text-button" data-auth-tab="register">Create an account</button></p>
+        </div>
+
+        <div id="register-panel" role="tabpanel" aria-labelledby="register-tab" hidden>
+          <form id="register-form" class="form-stack" novalidate>
+            <label class="field"><span>Full name</span><input name="fullName" autocomplete="name" required minlength="2" maxlength="80" placeholder="Jordan Lee" aria-describedby="register-name-error"><small class="field-error" id="register-name-error"></small></label>
+            <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com" aria-describedby="register-email-error"><small class="field-error" id="register-email-error"></small></label>
+            <label class="field"><span>Username</span><input name="username" autocomplete="username" required minlength="3" maxlength="20" pattern="[A-Za-z0-9_]+" placeholder="jordanlee" aria-describedby="register-username-error"><small class="field-hint">3–20 characters: letters, numbers, underscores.</small><small class="field-error" id="register-username-error"></small></label>
+            <label class="field"><span>Password</span><span class="password-wrap"><input name="password" type="password" autocomplete="new-password" required minlength="8" placeholder="At least 8 characters" aria-describedby="register-password-error"><button class="password-toggle" type="button" data-toggle-password aria-label="Show password">Show</button></span><small class="field-error" id="register-password-error"></small></label>
+            <label class="field"><span>Confirm password</span><span class="password-wrap"><input name="confirmPassword" type="password" autocomplete="new-password" required minlength="8" placeholder="Enter your password again" aria-describedby="register-confirm-error"><button class="password-toggle" type="button" data-toggle-password aria-label="Show password">Show</button></span><small class="field-error" id="register-confirm-error"></small></label>
+            <div class="form-message" id="register-message" role="status" aria-live="polite"></div>
+            <button class="button button-primary button-full" type="submit">Create account <span aria-hidden="true">→</span></button>
+          </form>
+          <p class="form-switch">Already have an account? <button type="button" class="text-button" data-auth-tab="login">Sign in</button></p>
+        </div>
+        <div class="auth-divider"><span>or</span></div>
+        <a class="button button-secondary button-full" href="admin.html"><span class="button-icon" aria-hidden="true">⌘</span> Continue as administrator</a>
+        <p class="auth-legal">By continuing, you agree to use this demonstration responsibly. <a href="README.md">About this demo</a></p>
+      </div>
+      <footer class="page-footer"><span>© 2026 Northstar Learning</span><span>Built for curious minds</span></footer>
+    </section>
+  </main>
+  <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

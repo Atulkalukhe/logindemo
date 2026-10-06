@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0e17">
+  <title>Administrator · Northstar Learning</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/app.js"></script>
+</head>
+<body data-page="admin">
+  <main class="admin-auth-shell" id="admin-login-view">
+    <a class="brand" href="index.html"><span class="brand-mark">N</span><span>northstar<span class="brand-muted"> learning</span></span></a>
+    <section class="auth-card admin-login-card">
+      <a class="back-link" href="index.html">← Back to learner sign in</a>
+      <div class="auth-heading"><p class="eyebrow">ADMINISTRATOR ACCESS</p><h1>Manage your community</h1><p class="muted">Sign in to review registrations and manage accounts.</p></div>
+      <form id="admin-login-form" class="form-stack" novalidate>
+        <label class="field"><span>Admin username</span><input name="identifier" autocomplete="username" required placeholder="admin" aria-describedby="admin-identifier-error"><small class="field-error" id="admin-identifier-error"></small></label>
+        <label class="field"><span>Password</span><span class="password-wrap"><input name="password" type="password" autocomplete="current-password" required placeholder="Enter admin password" aria-describedby="admin-password-error"><button class="password-toggle" type="button" data-toggle-password aria-label="Show password">Show</button></span><small class="field-error" id="admin-password-error"></small></label>
+        <div class="form-message" id="admin-login-message" role="status" aria-live="polite"></div>
+        <button class="button button-primary button-full" type="submit">Sign in to admin</button>
+      </form>
+      <div class="demo-credentials"><span class="credential-icon">i</span><p><strong>Demo account</strong><br>Username <code>admin</code> · Password <code>Admin@123</code><br><small>Change is not supported in this frontend demo.</small></p></div>
+    </section>
+  </main>
+
+  <div id="admin-dashboard-view" hidden>
+    <header class="topbar"><a class="brand" href="admin.html"><span class="brand-mark">N</span><span>northstar<span class="brand-muted"> learning</span></span></a><div class="topbar-actions"><span class="admin-chip"><span class="avatar avatar-admin">A</span><span>Administrator</span></span><button class="button button-quiet button-small" type="button" data-logout>Sign out</button></div></header>
+    <main class="admin-main">
+      <div class="page-heading-row"><div><p class="eyebrow">COMMUNITY MANAGEMENT</p><h1>Members</h1><p class="muted">Review applications and manage learner access.</p></div><button class="button button-secondary button-small" type="button" id="refresh-users">↻ <span>Refresh</span></button></div>
+      <section class="stats-grid" aria-label="Member statistics">
+        <article class="stat-card"><span class="stat-label">Total members</span><strong id="stat-total">0</strong><span class="stat-caption">Registered learner accounts</span><span class="stat-icon">◉</span></article>
+        <article class="stat-card stat-pending"><span class="stat-label">Pending review</span><strong id="stat-pending">0</strong><span class="stat-caption">Waiting for a decision</span><span class="stat-icon">◷</span></article>
+        <article class="stat-card stat-approved"><span class="stat-label">Approved</span><strong id="stat-approved">0</strong><span class="stat-caption">Can access learning content</span><span class="stat-icon">✓</span></article>
+        <article class="stat-card stat-rejected"><span class="stat-label">Rejected / disabled</span><strong id="stat-restricted">0</strong><span class="stat-caption">Access currently restricted</span><span class="stat-icon">⊘</span></article>
+      </section>
+      <section class="management-card">
+        <div class="management-toolbar"><div><h2>All learners</h2><p class="muted" id="member-count-label">0 accounts</p></div><label class="search-box"><span aria-hidden="true">⌕</span><input type="search" id="user-search" placeholder="Search members" aria-label="Search members"></label></div>
+        <div class="filter-tabs" role="group" aria-label="Filter by status"><button class="filter-tab is-active" data-filter="all" type="button">All</button><button class="filter-tab" data-filter="pending" type="button">Pending</button><button class="filter-tab" data-filter="approved" type="button">Approved</button><button class="filter-tab" data-filter="restricted" type="button">Restricted</button></div>
+        <div class="table-wrap"><table class="user-table"><thead><tr><th scope="col">Member</th><th scope="col">Username</th><th scope="col">Registered</th><th scope="col">Status</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead><tbody id="users-table-body"></tbody></table><div class="empty-state" id="users-empty" hidden><span class="empty-icon">⌕</span><strong>No members found</strong><p>Try another search or status filter.</p></div></div>
+      </section>
+      <p class="admin-note"><span aria-hidden="true">ⓘ</span> This browser-only demo stores account data on this device. Admin decisions are for demonstration purposes.</p>
+    </main>
+  </div>
+  <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
